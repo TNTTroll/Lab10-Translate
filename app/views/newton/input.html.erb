@@ -1,0 +1,14 @@
+<div>
+  <%= form_with url: '/newton/result', data: { turbo: false } do |form| %>
+    <div>
+      <div>Значения:</div>
+      <%= form.text_area(:a, value: "123") %>
+    </div>
+
+    <div>
+      <div>Тип отображения:</div>
+      <%= form.select(:visualise, [["Обработка на сервере", "1"], ["Обработка на кленте", "2"]], {}) %>
+    </div>
+    <%= form.submit("Найти последовательности!", id: 'calculate-btn') %>
+  <% end %>
+</div>
