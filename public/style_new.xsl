@@ -12,23 +12,6 @@
         background-color: #333;
         text-align: center;
         }
-        table {
-        width: 100%;
-        border-radius: 20px;
-        overflow: hidden;
-        }
-        td, th {
-        color: #fff;
-        padding: 1rem;
-        background-color: #444;
-        cursor: pointer;
-        }
-        tr {
-        transition: .2s;
-        }
-        tr:hover td, tr:hover th {
-        background-color: #777;
-        }
       </style>
       <body style="background-color: #222">
         <div class="container">

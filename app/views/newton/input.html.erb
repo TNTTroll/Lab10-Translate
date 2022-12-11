@@ -1,14 +1,28 @@
-<div>
-  <%= form_with url: '/newton/result', data: { turbo: false } do |form| %>
-    <div>
-      <div>Значения:</div>
-      <%= form.text_area(:a, value: "123") %>
-    </div>
+<style>
+    .container {
+        padding: 50px;
+        border-radius: 20px;
+        border: 5px solid #444;
+        margin: 100px;
+        color: #fff;
+        background-color: #333;
+        text-align: center;
+    }
+</style>
 
-    <div>
-      <div>Тип отображения:</div>
-      <%= form.select(:visualise, [["Обработка на сервере", "1"], ["Обработка на кленте", "2"]], {}) %>
+<body style="background-color: #222">
+    <div class="container">
+      <%= form_with url: '/newton/result', data: { turbo: false } do |form| %>
+        <div>
+          <div>Значения:</div>
+          <%= form.text_area(:a, value: "123") %>
+        </div>
+
+        <div>
+          <div>Тип отображения:</div>
+          <%= form.select(:visualise, [["Обработка на сервере", "1"], ["Обработка на исходнике сервера", "2"], ["Обработка на кленте", "3"], ["Обработка на исходнике кленте", "4"]], {}) %>
+        </div>
+        <%= form.submit("Найти последовательности!", id: 'calculate-btn') %>
+      <% end %>
     </div>
-    <%= form.submit("Найти последовательности!", id: 'calculate-btn') %>
-  <% end %>
-</div>
+</body>
